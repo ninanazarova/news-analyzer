@@ -1,0 +1,6 @@
+@import url("./__container/root__container.css");
+
+.root {
+  margin: 0 auto;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+}
