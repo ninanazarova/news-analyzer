@@ -5,3 +5,9 @@
 .menu__item:first-child {
   margin-left: 0;
 }
+
+@media (max-width: 520px) {
+  .menu__item {
+    margin-left: 11px;
+  }
+}

@@ -1,0 +1,24 @@
+.search__input {
+  box-sizing: border-box;
+  display: block;
+  min-width: 100%;
+
+  min-height: 64px;
+  border: 1px solid #d1d2d6;
+  border-radius: 100px;
+  padding: 0 24px;
+  outline: none;
+  caret-color: #2f71e5;
+}
+
+.search__input::placeholder {
+  color: #b6bcbf;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media (max-width: 880px) {
+  .search__input {
+    min-height: 56px;
+  }
+}

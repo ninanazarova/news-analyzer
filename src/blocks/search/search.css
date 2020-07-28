@@ -1,0 +1,21 @@
+@import url("./__input/search__input.css");
+@import url("./__button/search__button.css");
+
+.search {
+  margin-top: 64px;
+  display: block;
+  max-width: 608px;
+  position: relative;
+}
+
+@media (max-width: 880px) {
+  .search {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .search {
+    margin-top: 64px;
+  }
+}

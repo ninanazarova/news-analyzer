@@ -10,7 +10,7 @@
   <body>
     <div class="root">
       <section class="lead-section">
-        <header class="header root__container">
+        <header class="header header_theme_dark root__container">
           <img
             class="header__logo"
             src="<%=require('../../images/NewsAnalyzer.svg').default%>"
@@ -19,18 +19,41 @@
           <nav class="menu header__menu">
             <ul class="menu__items">
               <li class="menu__item">
-                <a class="header__link_type_active header__link link" href="/">
+                <a
+                  class="header__link_theme_dark header__link_type_active header__link link"
+                  href="/"
+                >
                   Главная
                 </a>
               </li>
               <li class="menu__item">
-                <a class="header__link link" href="/about.html"
+                <a
+                  class="header__link_theme_dark header__link link"
+                  href="/about.html"
                   >О&nbspпроекте</a
                 >
               </li>
             </ul>
           </nav>
         </header>
+        <main class="main">
+          <h1 class="main__title">
+            Что в мире творится?
+          </h1>
+          <p class="main__paragraph">
+            Введите в поиске любую тему и узнайте, насколько популярной она была
+            в новостях за прошедшую неделю.
+          </p>
+
+          <form action="" class="search" autocomplete="off" novalidate>
+            <input
+              type="text"
+              placeholder="Введите тему новости"
+              class="search__input"
+            />
+            <button class="search__button">Искать</button>
+          </form>
+        </main>
       </section>
     </div>
   </body>
