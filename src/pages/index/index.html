@@ -10,31 +10,33 @@
   <body>
     <div class="root">
       <section class="lead-section">
-        <header class="header header_theme_dark root__container">
-          <img
-            class="header__logo"
-            src="<%=require('../../images/NewsAnalyzer.svg').default%>"
-            alt="NewsAnalyzer"
-          />
-          <nav class="menu header__menu">
-            <ul class="menu__items">
-              <li class="menu__item">
-                <a
-                  class="header__link_theme_dark header__link_type_active header__link link"
-                  href="/"
-                >
-                  Главная
-                </a>
-              </li>
-              <li class="menu__item">
-                <a
-                  class="header__link_theme_dark header__link link"
-                  href="/about.html"
-                  >О&nbspпроекте</a
-                >
-              </li>
-            </ul>
-          </nav>
+        <header class="header header_theme_dark">
+          <div class="header__content">
+            <img
+              class="header__logo"
+              src="<%=require('../../images/NewsAnalyzer.svg').default%>"
+              alt="NewsAnalyzer"
+            />
+            <nav class="menu header__menu">
+              <ul class="menu__items">
+                <li class="menu__item">
+                  <a
+                    class="header__link_theme_dark header__link_type_active header__link link"
+                    href="/"
+                  >
+                    Главная
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="header__link_theme_dark header__link link"
+                    href="/about.html"
+                    >О&nbspпроекте</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
         </header>
         <main class="main">
           <h1 class="main__title">
@@ -54,6 +56,27 @@
             <button class="search__button">Искать</button>
           </form>
         </main>
+      </section>
+
+      <section class="about-author root__container">
+        <img
+          src="<%=require('../../images/Resume.jpg').default%>"
+          alt="Nina Nazarova"
+          class="about-author__pic"
+        />
+        <div class="about-author__description">
+          <h2 class="about-author__title">Об авторе</h2>
+          <p class="about-author__paragraph">
+            Это блок с описанием автора проекта. Здесь следует указать, как вас
+            зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+          </p>
+          <p class="about-author__paragraph">
+            Также можно рассказать о процессе обучения в Практикуме, чему вы тут
+            научились, и чем можете помочь потенциальным заказчикам. Если
+            хотите, оставьте свои контакты: email и телефон. Так заказчики
+            смогут с вами связаться.
+          </p>
+        </div>
       </section>
     </div>
   </body>
