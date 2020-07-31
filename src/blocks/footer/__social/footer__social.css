@@ -1,0 +1,6 @@
+@media (max-width: 685px) {
+  .footer__social {
+    order: 3;
+    align-self: flex-end;
+  }
+}

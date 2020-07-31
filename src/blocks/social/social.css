@@ -1,0 +1,11 @@
+@import url("./__item/social__item.css");
+@import url("./__link/social__link.css");
+@import url("./__link/_facebook/social__link_facebook.css");
+@import url("./__link/_github/social__link_github.css");
+
+.social {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
