@@ -38,6 +38,7 @@
             </nav>
           </div>
         </header>
+
         <main class="main">
           <h1 class="main__title title">
             Что в мире творится?
@@ -53,9 +54,89 @@
               placeholder="Введите тему новости"
               class="search__input"
             />
-            <button class="search__button">Искать</button>
+            <button class="search__button button">Искать</button>
           </form>
         </main>
+      </section>
+
+      <section class="search-results">
+        <div class="search-results__heading">
+          <h2 class="search-results__title title">Результаты поиска</h2>
+          <a href="/analytics.html" class="search-results__analytics-link link"
+            >Посмотреть аналитику</a
+          >
+        </div>
+
+        <ul class="cardlist">
+          <li class="cardlist__item">
+            <a href="" class="card link"
+              ><img
+                src="<%=require('../../images/fishcontent.png').default%>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__container">
+                <span class="card__date">2 августа, 2019</span>
+                <h3 class="card__title title">
+                  Национальное достояние – парки
+                </h3>
+                <p class="card__paragraph">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <p class="card__source">Лента.ру</p>
+              </div>
+            </a>
+          </li>
+          <li class="cardlist__item">
+            <a href="" class="card link"
+              ><img
+                src="<%=require('../../images/fishcontent.png').default%>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__container">
+                <span class="card__date">2 августа, 2019</span>
+                <h3 class="card__title title">
+                  Национальное достояние – парки
+                </h3>
+                <p class="card__paragraph">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <p class="card__source">Лента.ру</p>
+              </div>
+            </a>
+          </li>
+          <li class="cardlist__item">
+            <a href="" class="card link"
+              ><img
+                src="<%=require('../../images/fishcontent.png').default%>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__container">
+                <span class="card__date">2 августа, 2019</span>
+                <h3 class="card__title title">
+                  Национальное достояние – парки
+                </h3>
+                <p class="card__paragraph">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <p class="card__source">Лента.ру</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <button class="button search-results__button">Показать еще</button>
       </section>
 
       <template id="search-status-loader">

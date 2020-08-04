@@ -12,3 +12,7 @@
 @import url(../../blocks/search-status/search-status.css);
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/social/social.css);
+@import url(../../blocks/search-results/search-results.css);
+@import url(../../blocks/cardlist/cardlist.css);
+@import url(../../blocks/card/card.css);
+@import url(../../blocks/button/button.css);

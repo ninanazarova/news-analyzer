@@ -1,0 +1,28 @@
+.search-results__analytics-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-self: center;
+  color: #1a1b22;
+}
+
+.search-results__analytics-link::after {
+  content: "";
+  background-image: url("../../../images/back.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  top: 7px;
+  left: 1px;
+}
+
+@media (max-width: 620px) {
+  .search-results__analytics-link {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+}

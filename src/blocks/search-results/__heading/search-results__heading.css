@@ -1,0 +1,11 @@
+.search-results__heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 620px) {
+  .search-results__heading {
+    text-align: start;
+    flex-direction: column;
+  }
+}
