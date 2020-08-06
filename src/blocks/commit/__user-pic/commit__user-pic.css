@@ -1,0 +1,7 @@
+.commit__user-pic {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  grid-row: 1 / 3;
+}

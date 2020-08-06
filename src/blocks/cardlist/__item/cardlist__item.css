@@ -3,3 +3,7 @@
   background-color: #fff;
   text-align: start;
 }
+
+.cardlist__item:hover {
+  box-shadow: 0 3px 10px rgba(8, 29, 45, 0.1);
+}
