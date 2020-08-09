@@ -22,7 +22,7 @@
                 <li class="menu__item">
                   <a
                     class="header__link_theme_dark header__link_type_active header__link link"
-                    href="/"
+                    href="./"
                   >
                     Главная
                   </a>
@@ -30,7 +30,7 @@
                 <li class="menu__item">
                   <a
                     class="header__link_theme_dark header__link link"
-                    href="/about.html"
+                    href="./about.html"
                     >О&nbsp;проекте</a
                   >
                 </li>
@@ -63,7 +63,7 @@
         <div class="heading-section">
           <h2 class="heading-section__title title">Результаты&nbsp;поиска</h2>
           <a
-            href="/analytics.html"
+            href="./analytics.html"
             class="search-results__analytics-link heading-section__arrow-link link"
             >Посмотреть аналитику</a
           >
@@ -71,7 +71,7 @@
 
         <ul class="cardlist">
           <li class="cardlist__item">
-            <a href="" class="card link"
+            <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
                 alt=""
@@ -93,7 +93,7 @@
             </a>
           </li>
           <li class="cardlist__item">
-            <a href="" class="card link"
+            <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
                 alt=""
@@ -115,7 +115,7 @@
             </a>
           </li>
           <li class="cardlist__item">
-            <a href="" class="card link"
+            <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
                 alt=""
@@ -187,13 +187,18 @@
         <nav class="footer__menu menu">
           <ul class="menu__items menu__items_footer">
             <li class="menu__item menu__item_footer">
-              <a class="footer__link link" href="/">Главная</a>
+              <a class="footer__link link" href="./">Главная</a>
             </li>
             <li class="menu__item menu__item_footer">
-              <a class="footer__link link" href="/about.html">О&nbsp;проекте</a>
+              <a class="footer__link link" href="./about.html"
+                >О&nbsp;проекте</a
+              >
             </li>
             <li class="menu__item menu__item_footer">
-              <a class="footer__link link" href="https://praktikum.yandex.ru/"
+              <a
+                class="footer__link link"
+                href="https://praktikum.yandex.ru/"
+                target="_blank"
                 >Яндекс.Практикум</a
               >
             </li>
@@ -205,12 +210,14 @@
             <a
               href="https://github.com/ninanazarova"
               class="social__link social__link_github"
+              target="_blank"
             ></a>
           </li>
           <li class="social__item">
             <a
               href="https://www.facebook.com/nazarovanina/"
               class="social__link social__link_facebook"
+              target="_blank"
             ></a>
           </li>
         </ul>

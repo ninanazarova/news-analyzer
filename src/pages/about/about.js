@@ -14,6 +14,8 @@ const mySwiper = new Swiper(".swiper-container", {
     el: ".swiper-pagination",
     type: "bullets",
     clickable: true,
+    bulletClass: "commits__bullet",
+    bulletActiveClass: "commits__bullet_active",
   },
 
   navigation: {
@@ -46,7 +48,7 @@ const mySwiper = new Swiper(".swiper-container", {
       centeredSlides: true,
       loop: true,
     },
-    768: {
+    767: {
       slidesPerView: "auto",
       spaceBetween: 8,
       centeredSlides: false,

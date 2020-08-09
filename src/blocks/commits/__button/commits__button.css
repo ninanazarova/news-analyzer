@@ -1,4 +1,5 @@
 @import url("./_right/commits__button_right.css");
+@import url("./_left/commits__button_left.css");
 
 .commits__button {
   width: 40px;
@@ -9,7 +10,12 @@
   background-repeat: no-repeat;
   background-position: 45%;
   box-shadow: 0 3px 10px rgba(14, 26, 57, 0.2);
-  cursor: pointer;
+
+  top: 42%;
+}
+
+.commits__button::after {
+  content: "";
 }
 
 @media (max-width: 800px) {
