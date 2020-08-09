@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>NewsAnalyzer</title>
+    <link
+      rel="shortcut icon"
+      href="<%=require('../../images/favicon.svg').default%>"
+      sizes="any"
+      type="image/svg"
+    />
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>" />
   </head>
   <body>
@@ -14,7 +20,7 @@
           <img
             class="header__logo"
             src="<%=require('../../images/NewsAnalyzer-black.svg').default%>"
-            alt="NewsAnalyzer"
+            alt="Логотип"
           />
 
           <nav class="menu header__menu">
@@ -29,7 +35,7 @@
                 <a
                   class="header__link header__link_theme_white link"
                   href="./about.html"
-                  >О&nbspпроекте</a
+                  >О&nbsp;проекте</a
                 >
               </li>
             </ul>
@@ -38,7 +44,7 @@
       </header>
 
       <div class="breadcrumbs">
-        <span class="breadcrumbs__root">Главная</span>
+        <a href="./" class="breadcrumbs__root link">Главная</a>
         <span class="breadcrumbs__separator"> / </span>
         <span class="breadcrumbs__path-segment">Аналитика</span>
       </div>
@@ -157,20 +163,20 @@
           <li class="social__item">
             <a
               href="https://github.com/ninanazarova"
-              class="social__link social__link_github"
+              class="social__link social__link_github link"
               target="_blank"
             ></a>
           </li>
           <li class="social__item">
             <a
               href="https://www.facebook.com/nazarovanina/"
-              class="social__link social__link_facebook"
+              class="social__link social__link_facebook link"
               target="_blank"
             ></a>
           </li>
         </ul>
       </footer>
     </div>
+    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
-  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </html>

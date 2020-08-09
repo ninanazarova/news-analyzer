@@ -2,6 +2,7 @@
   border-radius: 20px;
   background-color: #fff;
   text-align: start;
+  transition-duration: 0.5s;
 }
 
 .cardlist__item:hover {

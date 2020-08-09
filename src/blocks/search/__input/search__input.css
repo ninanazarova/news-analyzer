@@ -17,6 +17,10 @@
   line-height: 22px;
 }
 
+.search__input:focus {
+  border: 2px solid #2f71e5;
+}
+
 @media (max-width: 880px) {
   .search__input {
     min-height: 56px;

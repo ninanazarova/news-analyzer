@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>NewsAnalyzer</title>
+    <link
+      rel="shortcut icon"
+      href="<%=require('../../images/favicon.svg').default%>"
+      sizes="any"
+      type="image/svg"
+    />
+
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>" />
   </head>
   <body>
@@ -15,7 +22,7 @@
             <img
               class="header__logo"
               src="<%=require('../../images/NewsAnalyzer.svg').default%>"
-              alt="NewsAnalyzer"
+              alt="Логотип"
             />
             <nav class="menu header__menu">
               <ul class="menu__items">
@@ -39,7 +46,7 @@
           </div>
         </header>
 
-        <main class="main">
+        <div class="main">
           <h1 class="title main__title">
             Что в мире творится?
           </h1>
@@ -48,15 +55,16 @@
             в новостях за прошедшую неделю.
           </p>
 
-          <form action="" class="search" autocomplete="off" novalidate>
+          <form class="search">
             <input
               type="text"
               placeholder="Введите тему новости"
               class="search__input"
+              required
             />
             <button class="search__button button">Искать</button>
           </form>
-        </main>
+        </div>
       </section>
 
       <section class="search-results">
@@ -74,7 +82,7 @@
             <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
-                alt=""
+                alt="Заставка новости"
                 class="card__image"
               />
               <div class="card__container">
@@ -96,7 +104,7 @@
             <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
-                alt=""
+                alt="Заставка новости"
                 class="card__image"
               />
               <div class="card__container">
@@ -118,7 +126,7 @@
             <a href="" class="card link" target="_blank"
               ><img
                 src="<%=require('../../images/fishcontent.png').default%>"
-                alt=""
+                alt="Заставка новости"
                 class="card__image"
               />
               <div class="card__container">
@@ -141,31 +149,31 @@
         <button class="button search-results__button">Показать еще</button>
       </section>
 
-      <template id="search-status-loader">
-        <div class="search-status">
-          <i class="search-status__preloader"></i>
-          <p class="search-status__message">Идет поиск новостей...</p>
-        </div>
-      </template>
+      <!-- <template id="search-status-loader"> -->
+      <div class="search-status">
+        <i class="search-status__preloader"></i>
+        <p class="search-status__message">Идет поиск новостей...</p>
+      </div>
+      <!-- </template> -->
 
-      <template id="search-status-not-found">
-        <div class="search-status">
-          <img
-            class="search-status__icon"
-            src="<%=require('../../images/not-found.svg').default%>"
-            alt=""
-          />
-          <h2 class="search-status__title title">Ничего не найдено</h2>
-          <p class="search-status__message">
-            К сожалению по вашему запросу ничего не найдено.
-          </p>
-        </div>
-      </template>
+      <!-- <template id="search-status-not-found"> -->
+      <div class="search-status">
+        <img
+          class="search-status__icon"
+          src="<%=require('../../images/not-found.svg').default%>"
+          alt="Не найдено"
+        />
+        <h2 class="search-status__title title">Ничего не найдено</h2>
+        <p class="search-status__message">
+          К сожалению по вашему запросу ничего не найдено.
+        </p>
+      </div>
+      <!-- </template> -->
 
       <section class="about-author root__container">
         <img
           src="<%=require('../../images/Resume.jpg').default%>"
-          alt="Nina Nazarova"
+          alt="Нина Назарова"
           class="about-author__pic"
         />
         <div class="about-author__description">
@@ -209,20 +217,20 @@
           <li class="social__item">
             <a
               href="https://github.com/ninanazarova"
-              class="social__link social__link_github"
+              class="social__link social__link_github link"
               target="_blank"
             ></a>
           </li>
           <li class="social__item">
             <a
               href="https://www.facebook.com/nazarovanina/"
-              class="social__link social__link_facebook"
+              class="social__link social__link_facebook link"
               target="_blank"
             ></a>
           </li>
         </ul>
       </footer>
     </div>
+    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
-  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </html>
