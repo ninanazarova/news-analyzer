@@ -1,0 +1,7 @@
+.graph__week {
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 16px;
+}

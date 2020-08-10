@@ -1,0 +1,29 @@
+.root__container {
+  padding: 0 104px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1180px) {
+  .root__container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 880px) {
+  .root__container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .root__container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .root__container {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,10 @@
+.commits__bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin: 0 4px;
+  background: #d1d2d6;
+  opacity: 1;
+  border-radius: 100%;
+  cursor: pointer;
+}

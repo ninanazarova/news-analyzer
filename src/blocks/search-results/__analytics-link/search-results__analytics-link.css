@@ -1,0 +1,14 @@
+/* .search-results__analytics-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-self: center;
+  color: #1a1b22;
+} */
+
+@media (max-width: 620px) {
+  .search-results__analytics-link {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+}

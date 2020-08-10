@@ -1,0 +1,12 @@
+.graph__title {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+@media (max-width: 450px) {
+  .graph__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}

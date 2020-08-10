@@ -1,0 +1,56 @@
+@import url("./__title/technologies__title.css");
+@import url("./__list/technologies__list.css");
+@import url("./__item/technologies__item.css");
+
+.technologies {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 80px 216px 88px 104px;
+
+  background-color: #f5f6f7;
+  color: #1a1b22;
+}
+
+@media (max-width: 2560px) {
+  .technologies {
+    padding-right: calc(50% - 400px);
+    padding-left: calc(50% - 720px);
+  }
+}
+@media (max-width: 1440px) {
+  .technologies {
+    padding: 80px 216px 88px 104px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .technologies {
+    padding-right: 10%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .technologies {
+    padding: 60px 60px 68px;
+  }
+}
+
+@media (max-width: 960px) {
+  .technologies {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 880px) {
+  .technologies {
+    flex-direction: column;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .technologies {
+    padding: 32px 16px 38px;
+  }
+}

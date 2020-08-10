@@ -1,0 +1,25 @@
+@import url("./_type/_active/header__link_type_active.css");
+@import url("./_theme/_white/header__link_theme_white.css");
+@import url("./_theme/_dark/header__link_theme_dark.css");
+
+.header__link {
+  color: #b6bcbf;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 0 0 24px 0;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 880px) {
+  .header__link {
+    padding-bottom: 17px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header__link {
+    font-size: 16px;
+    padding-bottom: 14px;
+  }
+}

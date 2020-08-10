@@ -1,0 +1,14 @@
+@import url("./__preloader/search-status__preloader.css");
+@import url("./__message/search-status__message.css");
+@import url("./__title/search-status__title.css");
+@import url("./__icon/search-status__icon.css");
+
+.search-status {
+  margin: 0;
+  padding: 80px 0;
+  background-color: #f5f6f7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

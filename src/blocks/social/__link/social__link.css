@@ -1,0 +1,12 @@
+.social__link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 20px;
+}
+.social__link:hover {
+  opacity: 0.5;
+}
+.social__link:first-child {
+  margin-left: 0;
+}

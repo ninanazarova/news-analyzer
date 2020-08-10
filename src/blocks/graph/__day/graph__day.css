@@ -1,0 +1,17 @@
+.graph__day {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  grid-template-rows: 24px;
+  margin-top: 56px;
+}
+
+.graph__day:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 450px) {
+  .graph__day {
+    margin-top: 24px;
+    grid-template-columns: 80px 1fr;
+  }
+}

@@ -1,0 +1,5 @@
+.commits__button_right {
+  transform: rotate(180deg);
+  right: 24px;
+  left: auto;
+}

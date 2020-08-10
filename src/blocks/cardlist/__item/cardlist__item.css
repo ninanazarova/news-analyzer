@@ -1,0 +1,10 @@
+.cardlist__item {
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: start;
+  transition-duration: 0.5s;
+}
+
+.cardlist__item:hover {
+  box-shadow: 0 3px 10px rgba(8, 29, 45, 0.1);
+}

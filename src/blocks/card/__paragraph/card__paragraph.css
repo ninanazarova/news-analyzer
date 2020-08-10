@@ -1,0 +1,18 @@
+.card__paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 16px 0 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1000px) {
+  .card__paragraph {
+    margin-top: 8px;
+  }
+}

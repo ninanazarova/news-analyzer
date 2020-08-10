@@ -1,0 +1,5 @@
+@media (max-width: 620px) {
+  .commits__github-link {
+    display: none;
+  }
+}

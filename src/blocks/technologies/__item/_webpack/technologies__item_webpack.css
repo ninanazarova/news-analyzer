@@ -1,0 +1,3 @@
+.technologies__item_webpack::after {
+  background-image: url("../../../../images/webpack.svg");
+}

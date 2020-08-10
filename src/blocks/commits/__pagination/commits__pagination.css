@@ -1,0 +1,10 @@
+.commits__pagination {
+  position: static;
+  margin-top: 48px;
+}
+
+@media (max-width: 500px) {
+  .commits__pagination {
+    margin-top: 16px;
+  }
+}

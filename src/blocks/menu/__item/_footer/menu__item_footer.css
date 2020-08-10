@@ -1,0 +1,19 @@
+.menu__item.menu__item_footer {
+  margin-left: 44px;
+}
+
+.menu__item.menu__item_footer:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 800px) {
+  .menu__item.menu__item_footer {
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 685px) {
+  .menu__item.menu__item_footer {
+    margin: 0 0 24px;
+  }
+}

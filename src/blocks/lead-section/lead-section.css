@@ -1,0 +1,46 @@
+.lead-section {
+  width: 100%;
+  min-height: 576px;
+  background-image: url("../../images/banner.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.lead-section:after {
+  content: "";
+  height: 576px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 880px) {
+  .lead-section {
+    min-height: 400px;
+  }
+
+  .lead-section:after {
+    height: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .lead-section {
+    min-height: 536px;
+  }
+
+  .lead-section:after {
+    height: 536px;
+  }
+}

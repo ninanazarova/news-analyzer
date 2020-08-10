@@ -1,0 +1,7 @@
+@media (max-width: 685px) {
+  .menu__items_footer {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+  }
+}

@@ -1,0 +1,3 @@
+.technologies__item_html::after {
+  background-image: url("../../../../images/html.svg");
+}

@@ -1,0 +1,7 @@
+.commit__email {
+  margin: 4px 0 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  grid-row: 2 / 3;
+}

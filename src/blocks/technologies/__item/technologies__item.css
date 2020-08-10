@@ -1,0 +1,37 @@
+@import url("./_html/technologies__item_html.css");
+@import url("./_css/technologies__item_css.css");
+@import url("./_js/technologies__item_js.css");
+@import url("./_webpack/technologies__item_webpack.css");
+
+.technologies__item {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.technologies__item::after {
+  content: "";
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  margin: 8px auto 0;
+}
+
+@media (max-width: 1180px) {
+  .technologies__item {
+  }
+}
+
+@media (max-width: 1024px) {
+  .technologies__item {
+  }
+}
+
+@media (max-width: 500px) {
+  .technologies__item {
+  }
+}
