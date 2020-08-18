@@ -5,6 +5,7 @@
   background-color: #f5f6f7;
   padding: 80px 104px;
   text-align: center;
+  display: none;
 }
 
 @media (max-width: 1200px) {
