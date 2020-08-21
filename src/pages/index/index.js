@@ -89,7 +89,7 @@ const showMoreBtn = new ShowMoreButton({
   onClick: cardsChunkRendering,
 });
 
-showMoreBtn.setClickListener();
+showMoreBtn.setClickListener(searchStorage);
 
 (() => {
   if (searchStorage.getQueryString()) {

@@ -4,8 +4,25 @@ export class DataStorage {
     localStorage.setItem("news", JSON.stringify(data));
   };
 
+  getQueryString = () => {
+    return localStorage["querystring"];
+  };
+
+  getNews = () => {
+    return JSON.parse(localStorage.getItem("news"));
+  };
+
   getChunk = (chunkNumber) => {
-    const news = JSON.parse(localStorage.getItem("news")).articles;
+    const chunksArray = this.makeChunksArray();
+    return chunksArray[chunkNumber];
+  };
+
+  getChunksAmount = () => {
+    return this.makeChunksArray().length;
+  };
+
+  makeChunksArray = () => {
+    const news = this.getNews().articles;
 
     const chunkSize = 3;
     let chunksArray = [];
@@ -13,14 +30,6 @@ export class DataStorage {
       chunksArray[i] = news.slice(i * chunkSize, i * chunkSize + chunkSize);
     }
 
-    return chunksArray[chunkNumber];
-  };
-
-  getQueryString = () => {
-    return localStorage["querystring"];
-  };
-
-  getNews = () => {
-    return JSON.parse(localStorage.getItem("news"));
+    return chunksArray;
   };
 }
