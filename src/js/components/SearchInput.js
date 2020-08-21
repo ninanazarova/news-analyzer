@@ -1,12 +1,12 @@
 export class SearchInput {
-  constructor({ node, onSubmit }) {
-    this.node = node;
-    this._onSubmit = onSubmit;
+  constructor({ node, onSearchSubmit }) {
+    this._node = node;
+    this._onSearchSubmit = onSearchSubmit;
   }
 
   setSubmitListener = () => {
-    this.node.addEventListener("submit", (e) => {
-      this._onSubmit(e, this.node);
+    this._node.addEventListener("submit", (e) => {
+      this._onSearchSubmit(e, this._node);
     });
   };
   // TODO: валидация

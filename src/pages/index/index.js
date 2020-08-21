@@ -5,6 +5,8 @@ import { NewsCard } from "../../js/components/NewsCard.js";
 import { NewsCardList } from "../../js/components/NewsCardList.js";
 import { SearchInput } from "../../js/components/SearchInput.js";
 import { DataStorage } from "../../js/modules/DataStorage.js";
+import { ShowMoreButton } from "../../js/components/ShowMoreButton.js";
+import { parseCardDate } from "../../js/utils/date.js";
 
 const renderPreloader = (isLoading) => {
   if (isLoading) {
@@ -19,27 +21,24 @@ const renderPreloader = (isLoading) => {
   }
 };
 
-const dataStore = new DataStorage();
-
-const newsApi = new NewsApi({
-  baseUrl: "https://newsapi.org/v2/everything",
-  apiKey: "112ced9bd7d9458eaf112188f4d6c94c",
-});
+const searchResultsNode = document.querySelector(".search-results");
+const searchStorage = new DataStorage();
+const newsApi = new NewsApi();
 
 const newsCardList = new NewsCardList({
-  section: document.querySelector(".search-results"),
+  section: searchResultsNode,
 });
 
-const onSubmit = (e, form) => {
+const onSearchSubmit = (e, form) => {
   e.preventDefault();
   renderPreloader(true);
-
+  searchResultsNode.setAttribute("style", "display:none");
   const querystring = form.elements.input.value;
   newsApi
     .getNews(querystring)
     .then((news) => {
-      dataStore.updateStorage(querystring, news.articles);
-      cardsChunkRendering({ e: e });
+      searchStorage.update(querystring, news);
+      cardsChunkRendering(0);
     })
     .catch((err) => {
       console.log(err);
@@ -59,73 +58,42 @@ const newCard = (cardObj) => {
 
 const searchInput = new SearchInput({
   node: document.forms.search,
-  onSubmit: onSubmit,
+  onSearchSubmit: onSearchSubmit,
 });
 
 searchInput.setSubmitListener();
 
-const showMoreBtn = document.querySelector(".search-results__button");
-let clickCounter = 0;
-showMoreBtn.addEventListener("click", (e) => {
-  ++clickCounter;
-  cardsChunkRendering({ e: e, clickCounter: clickCounter });
+// chunkNumber = clickCount
+const cardsChunkRendering = (clickCount) => {
+  switch (clickCount) {
+    case 0:
+      newsCardList.clear();
+      break;
+  }
+
+  searchStorage.getChunk(clickCount).forEach((newsItem) => {
+    const newsCard = newCard({
+      link: newsItem.url,
+      image: newsItem.urlToImage,
+      date: parseCardDate(newsItem.publishedAt),
+      title: newsItem.title,
+      description: newsItem.description,
+      source: newsItem.source.name,
+    });
+    newsCardList.addCard(newsCard);
+  });
+};
+
+const showMoreBtn = new ShowMoreButton({
+  button: document.querySelector(".search-results__button"),
+  onClick: cardsChunkRendering,
 });
 
-const newsToChunksList = () => {
-  const news = JSON.parse(localStorage.getItem("news"));
-
-  const chunkSize = 3;
-  let chunksArray = [];
-  for (let i = 0; i < Math.ceil(news.length / chunkSize); i++) {
-    chunksArray[i] = news.slice(i * chunkSize, i * chunkSize + chunkSize);
-  }
-  return chunksArray;
-};
-
-const newsList = [];
-
-const cardsChunkRendering = ({
-  e: e,
-  clickCounter: clickCounter,
-  isRefreshPage: isRefreshPage,
-}) => {
-  const chunksArray = newsToChunksList();
-
-  if ((e && e.type === "submit") || isRefreshPage) {
-    newsCardList.clear(newsList);
-    chunksArray[0].forEach((newsItem) => {
-      const newsCard = newCard({
-        link: newsItem.url,
-        image: newsItem.urlToImage,
-        date: newsItem.publishedAt,
-        title: newsItem.title,
-        description: newsItem.description,
-        source: newsItem.source.name,
-      });
-      newsList.push(newsCard);
-      newsCardList.render(newsList);
-    });
-  }
-
-  if (e && e.type === "click") {
-    chunksArray[clickCounter].forEach((newsItem) => {
-      const newsCard = newCard({
-        link: newsItem.url,
-        image: newsItem.urlToImage,
-        date: newsItem.publishedAt,
-        title: newsItem.title,
-        description: newsItem.description,
-        source: newsItem.source.name,
-      });
-      newsList.push(newsCard);
-      newsCardList.render(newsList);
-    });
-  }
-};
+showMoreBtn.setClickListener();
 
 (() => {
-  if (localStorage["querystring"]) {
-    cardsChunkRendering({ isRefreshPage: true });
-    document.forms.search.elements.input.value = localStorage["querystring"];
+  if (searchStorage.getQueryString()) {
+    cardsChunkRendering(0);
+    document.forms.search.elements.input.value = searchStorage.getQueryString();
   }
 })();

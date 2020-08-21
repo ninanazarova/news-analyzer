@@ -5,19 +5,12 @@ export class NewsCardList {
   }
 
   addCard = (element) => {
+    this._section.setAttribute("style", "display: block");
     this._cardlist.append(element);
   };
 
-  render = (newsList) => {
-    this._section.setAttribute("style", "display: block");
-    newsList.forEach((newsItem) => {
-      this.addCard(newsItem);
-    });
-  };
-
-  clear = (newsList) => {
+  clear = () => {
     this._section.setAttribute("style", "display: none");
-    newsList.splice(0, newsList.length);
     this._cardlist.innerHTML = "";
   };
 }

@@ -1,12 +1,16 @@
+import { normalizedFrom, normalizedTo } from "../utils/date.js";
+import {
+  NEWS_API_KEY,
+  NEWS_API_URL,
+  NEWS_PAGE_SIZE,
+} from "../constants/constants.js";
+
 export class NewsApi {
-  constructor({ baseUrl, apiKey }) {
-    this.baseUrl = baseUrl;
-    this.apiKey = apiKey;
-  }
+  constructor() {}
 
   getNews = (querystring) => {
     return fetch(
-      `${this.baseUrl}?q=${querystring}&apiKey=${this.apiKey}&from=2020-08-03&to="2020-08-10&pageSize=100`
+      `${NEWS_API_URL}?q=${querystring}&apiKey=${NEWS_API_KEY}&from=${normalizedFrom}&to=${normalizedTo}&pageSize=${NEWS_PAGE_SIZE}`
     ).then((res) => {
       if (!res.ok) {
         return Promise.reject(`Ошибка: ${res.status}`);
