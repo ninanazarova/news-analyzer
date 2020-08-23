@@ -23,13 +23,14 @@ export class NewsCard {
     image.setAttribute("src", this._image);
 
     image.onerror = () => {
-      image.setAttribute("src", "../../images/not-found.svg");
+      image.onerror = null;
+      image.setAttribute("src", require("../../images/not-found.svg").default);
     };
 
     image.setAttribute("style", `background-image: url(${this._image})`);
 
     if (this._image === "https:") {
-      image.setAttribute("src", "../../images/not-found.svg");
+      image.setAttribute("src", require("../../images/not-found.svg").default);
     }
 
     date.textContent = this._date;
