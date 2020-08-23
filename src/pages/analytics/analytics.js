@@ -15,9 +15,6 @@ const searchStorage = new DataStorage();
 const statistics = new Statistics({
   querystring: searchStorage.getQueryString(),
   newsObject: searchStorage.getNews(),
-  //   queryWordNode: queryWordNode,
-  //   totalSumNode: totalSumNode,
-  //   mentionsSumNode: mentionsSumNode,
 });
 
 statistics.updateHeadingValues(

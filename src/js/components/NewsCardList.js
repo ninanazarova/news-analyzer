@@ -11,6 +11,9 @@ export class NewsCardList {
 
   clear = () => {
     this._section.setAttribute("style", "display: none");
-    this._cardlist.innerHTML = "";
+
+    while (this._cardlist.firstChild) {
+      this._cardlist.removeChild(this._cardlist.firstChild);
+    }
   };
 }

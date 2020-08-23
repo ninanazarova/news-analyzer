@@ -1,27 +1,27 @@
 import "./index.css";
-// TODO: Refactoring
 import { NewsApi } from "../../js/modules/NewsApi.js";
 import { NewsCard } from "../../js/components/NewsCard.js";
 import { NewsCardList } from "../../js/components/NewsCardList.js";
 import { SearchInput } from "../../js/components/SearchInput.js";
 import { DataStorage } from "../../js/modules/DataStorage.js";
 import { ShowMoreButton } from "../../js/components/ShowMoreButton.js";
+import { FormValidator } from "../../js/components/FormValidator.js";
 import { parseCardDate } from "../../js/utils/date.js";
 
-const renderPreloader = (isLoading) => {
-  if (isLoading) {
-    const leadSection = document.querySelector(".lead-section");
-    const loader = document
-      .querySelector("#search-status-loader")
-      .content.cloneNode(true);
+const loader = document.querySelector(".loader");
+const notFoundNode = document.querySelector(".not-found");
+const searchResultsNode = document.querySelector(".search-results");
 
-    leadSection.after(loader);
-  } else {
-    document.querySelector(".search-status").remove();
-  }
+const renderPreloader = (isLoading) => {
+  isLoading ? (loader.style.display = "flex") : (loader.style.display = "none");
 };
 
-const searchResultsNode = document.querySelector(".search-results");
+const renderNotFound = (isRender) => {
+  isRender
+    ? (notFoundNode.style.display = "flex")
+    : (notFoundNode.style.display = "none");
+};
+
 const searchStorage = new DataStorage();
 const newsApi = new NewsApi();
 
@@ -29,31 +29,37 @@ const newsCardList = new NewsCardList({
   section: searchResultsNode,
 });
 
+const formValidator = new FormValidator(document.forms.search);
+
+formValidator.setEventListeners();
+
 const onSearchSubmit = (e, form) => {
   e.preventDefault();
+
   renderPreloader(true);
-  searchResultsNode.setAttribute("style", "display:none");
+  formValidator.disableSubmitButton();
+  newsCardList.clear();
+
   const querystring = form.elements.input.value;
+
   newsApi
     .getNews(querystring)
     .then((news) => {
-      searchStorage.update(querystring, news);
-      cardsChunkRendering(0);
+      if (news.totalResults === 0) {
+        renderNotFound(true);
+      } else {
+        renderNotFound(false);
+        searchStorage.update(querystring, news);
+        cardsChunkRendering(0);
+      }
     })
     .catch((err) => {
-      console.log(err);
+      alert(err);
     })
     .finally(() => {
       renderPreloader(false);
+      formValidator.enableSubmitButton();
     });
-};
-
-const newCard = (cardObj) => {
-  const card = new NewsCard(
-    document.querySelector("#news-card").content,
-    cardObj
-  );
-  return card.create();
 };
 
 const searchInput = new SearchInput({
@@ -63,14 +69,16 @@ const searchInput = new SearchInput({
 
 searchInput.setSubmitListener();
 
+const newCard = (cardObj) => {
+  const card = new NewsCard(
+    document.querySelector("#news-card").content,
+    cardObj
+  );
+  return card.create();
+};
+
 // chunkNumber = clickCount
 const cardsChunkRendering = (clickCount) => {
-  switch (clickCount) {
-    case 0:
-      newsCardList.clear();
-      break;
-  }
-
   searchStorage.getChunk(clickCount).forEach((newsItem) => {
     const newsCard = newCard({
       link: newsItem.url,

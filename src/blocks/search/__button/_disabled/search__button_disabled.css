@@ -1,0 +1,7 @@
+/* .search__button.search__button_disabled {
+} */
+
+.search__button.search__button_disabled:disabled {
+  cursor: not-allowed;
+  background-color: #d85757;
+}

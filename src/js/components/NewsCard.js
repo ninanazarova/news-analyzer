@@ -19,20 +19,24 @@ export class NewsCard {
     const description = card.querySelector(".card__paragraph");
     const source = card.querySelector(".card__source");
 
-    link.setAttribute("href", `${this._link}`);
-    image.setAttribute("src", `${this._image}`);
+    link.setAttribute("href", this._link);
+    image.setAttribute("src", this._image);
+
     image.onerror = () => {
       image.setAttribute("src", "../../images/not-found.svg");
     };
+
     image.setAttribute("style", `background-image: url(${this._image})`);
-    switch (this._image) {
-      case "https:":
-        image.setAttribute("src", "../../images/not-found.svg");
+
+    if (this._image === "https:") {
+      image.setAttribute("src", "../../images/not-found.svg");
     }
+
     date.textContent = this._date;
     title.textContent = this._title;
     description.textContent = this._description;
     source.textContent = this._source;
+
     return card;
   };
 }

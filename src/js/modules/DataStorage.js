@@ -25,7 +25,7 @@ export class DataStorage {
     const news = this.getNews().articles;
 
     const chunkSize = 3;
-    let chunksArray = [];
+    const chunksArray = [];
     for (let i = 0; i < Math.ceil(news.length / chunkSize); i++) {
       chunksArray[i] = news.slice(i * chunkSize, i * chunkSize + chunkSize);
     }

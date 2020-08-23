@@ -1,9 +1,19 @@
 import Swiper, { Navigation, Pagination } from "swiper";
-Swiper.use([Navigation, Pagination]);
 import "swiper/swiper-bundle.css";
 import "./about.css";
+import { GithubApi } from "../../js/modules/GithubApi.js";
+import { CommmitCard } from "../../js/components/CommitCard.js";
+import { CommitCardList } from "../../js/components/CommitCardList.js";
+import { parseCardDate } from "../../js/utils/date.js";
 
+const commitCardList = new CommitCardList({
+  cardlist: document.querySelector(".swiper-wrapper"),
+});
+
+Swiper.use([Navigation, Pagination]);
 const mySwiper = new Swiper(".swiper-container", {
+  init: false,
+  slidesPerView: "auto",
   direction: "horizontal",
   effect: "slide",
   loop: true,
@@ -25,39 +35,49 @@ const mySwiper = new Swiper(".swiper-container", {
 
   breakpoints: {
     320: {
-      slidesPerView: "auto",
       spaceBetween: 8,
       centeredSlides: true,
-      loop: false,
     },
-    450: {
-      slidesPerView: "auto",
-      spaceBetween: 8,
-      centeredSlides: true,
-      loop: true,
-    },
-    500: {
-      loop: true,
-      spaceBetween: 8,
-      slidesPerView: "auto",
-      centeredSlides: true,
-    },
-    640: {
-      slidesPerView: "auto",
-      spaceBetween: 8,
-      centeredSlides: true,
-      loop: true,
-    },
-    767: {
-      slidesPerView: "auto",
+    768: {
       spaceBetween: 8,
       centeredSlides: false,
-      loop: false,
     },
     1024: {
-      slidesPerView: "auto",
-      spaceBetween: 16,
       centeredSlides: true,
+      spaceBetween: 16,
     },
   },
 });
+
+const githubApi = new GithubApi();
+
+githubApi
+  .getCommits()
+  .then((commits) => {
+    commits = commits.length > 20 ? commits.slice(-20) : commits;
+    commits
+      .map((commitItem) => {
+        return newCard({
+          link: commitItem.html_url,
+          name: commitItem.commit.committer.name,
+          email: commitItem.commit.committer.email,
+          date: parseCardDate(commitItem.commit.committer.date),
+          message: commitItem.commit.message,
+          userPic: commitItem.author.avatar_url,
+        });
+      })
+      .forEach((card) => commitCardList.addCard(card));
+
+    mySwiper.init();
+  })
+  .catch((err) => {
+    alert(err);
+  });
+
+const newCard = (cardObj) => {
+  const card = new CommmitCard(
+    document.querySelector("#commit-card").content,
+    cardObj
+  );
+  return card.create();
+};

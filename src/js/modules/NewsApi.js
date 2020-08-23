@@ -6,8 +6,6 @@ import {
 } from "../constants/constants.js";
 
 export class NewsApi {
-  constructor() {}
-
   getNews = (querystring) => {
     return fetch(
       `${NEWS_API_URL}?q=${querystring}&apiKey=${NEWS_API_KEY}&from=${normalizedFrom}&to=${normalizedTo}&pageSize=${NEWS_PAGE_SIZE}`

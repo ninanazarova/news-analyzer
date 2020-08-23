@@ -38,7 +38,7 @@ export class Statistics {
       ) {
         return ++acc;
       }
-      return (acc += 0);
+      return acc;
     }, 0);
   };
 

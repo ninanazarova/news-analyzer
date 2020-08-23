@@ -7,12 +7,12 @@ export class ShowMoreButton {
 
   setClickListener = (searchStorage) => {
     this._button.addEventListener("click", () => {
-      ++this._clickCount;
+      this._clickCount++;
 
-      //мб как то вынести этот иф в другую функцию и вызывать ее здесь (не знаю как назвать ее)
-      if (searchStorage.getChunksAmount() === this._clickCount + 1) {
+      if (this._clickCount + 1 === searchStorage.getChunksAmount()) {
         this._button.style.display = "none";
       }
+
       this._onClick(this._clickCount);
     });
   };

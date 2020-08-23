@@ -9,6 +9,4 @@ export class SearchInput {
       this._onSearchSubmit(e, this._node);
     });
   };
-  // TODO: валидация
-  _validate = () => {};
 }

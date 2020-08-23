@@ -58,9 +58,8 @@ export const parseCardDate = (date) => {
 };
 
 // for analytics
-// TODO: тоже вынести отдельно
 export const getDatesList = () => {
-  let datesList = [];
+  const datesList = [];
   for (let i = DAYS_OF_NEWS; i >= 0; i--) {
     const day = new Date();
     day.setDate(day.getDate() - i);
@@ -70,9 +69,9 @@ export const getDatesList = () => {
 };
 
 export const getMentionsObject = () => {
-  let datesList = [];
+  const datesList = [];
   for (let i = DAYS_OF_NEWS; i >= 0; i--) {
-    let day = new Date();
+    const day = new Date();
     day.setDate(day.getDate() - i);
     datesList.push(day.getDate());
   }
