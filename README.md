@@ -34,4 +34,4 @@ _v 0.0.1._ Проект в разработке
 
 ## **_Посмотреть сайт_**
 
-https://ninanazarova.github.io/news-analyzer/about.html
+https://ninanazarova.github.io/news-analyzer/

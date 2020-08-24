@@ -123,65 +123,8 @@
           >
         </div>
 
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <a href="" class="swiper-slide commit" target="_blank">
-              <p class="commit__date">14 августа, 2019</p>
-              <div class="commit__user-info">
-                <img
-                  src="<%=require('../../images/Resume.jpg').default%>"
-                  alt="Аватар"
-                  class="commit__user-pic"
-                />
-                <h3 class="commit__name title">Мария Фёдорова</h3>
-                <p class="commit__email">mariiifed@yandex.ru</p>
-              </div>
-
-              <p class="commit__message">
-                With Emmet, you can type CSS-like expressions that can be
-                dynamically parsed, and produce output depending on what you
-                type in the abb...
-              </p>
-            </a>
-
-            <a href="" class="swiper-slide commit" target="_blank">
-              <p class="commit__date">14 августа, 2019</p>
-              <div class="commit__user-info">
-                <img
-                  src="<%=require('../../images/Resume.jpg').default%>"
-                  alt="Аватар"
-                  class="commit__user-pic"
-                />
-                <h3 class="commit__name title">Мария Фёдорова</h3>
-                <p class="commit__email">mariiifed@yandex.ru</p>
-              </div>
-
-              <p class="commit__message">
-                With Emmet, you can type CSS-like expressions that can be
-                dynamically parsed, and produce output depending on what you
-                type in the abb...
-              </p>
-            </a>
-
-            <a href="" class="swiper-slide commit" target="_blank">
-              <p class="commit__date">14 августа, 2019</p>
-              <div class="commit__user-info">
-                <img
-                  src="<%=require('../../images/Resume.jpg').default%>"
-                  alt="Аватар"
-                  class="commit__user-pic"
-                />
-                <h3 class="commit__name title">Мария Фёдорова</h3>
-                <p class="commit__email">mariiifed@yandex.ru</p>
-              </div>
-
-              <p class="commit__message">
-                With Emmet, you can type CSS-like expressions that can be
-                dynamically parsed, and produce output depending on what you
-                type in the abb...
-              </p>
-            </a>
-          </div>
+        <div class="swiper-container swiper__container">
+          <div class="swiper-wrapper"></div>
 
           <div
             class="commits__button commits__button_left swiper-button-prev"
@@ -238,6 +181,27 @@
           </li>
         </ul>
       </footer>
+
+      <template id="commit-card" style="display: none;">
+        <a class="swiper-slide commit" target="_blank">
+          <p class="commit__date">14 августа, 2019</p>
+          <div class="commit__user-info">
+            <img
+              src="<%=require('../../images/Resume.jpg').default%>"
+              alt="Аватар"
+              class="commit__user-pic"
+            />
+            <h3 class="commit__name title">Мария Фёдорова</h3>
+            <p class="commit__email">mariiifed@yandex.ru</p>
+          </div>
+
+          <p class="commit__message">
+            With Emmet, you can type CSS-like expressions that can be
+            dynamically parsed, and produce output depending on what you type in
+            the abb...
+          </p>
+        </a>
+      </template>
     </div>
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
