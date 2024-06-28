@@ -1,37 +1,23 @@
 # news-analyzer
 
-Дипломный проект в Яндекс.Практикуме.
+_v 0.0.1._ 
 
-_v 0.0.1._ Проект в разработке
+A service for analysing events happening in the world. Its task is to determine how popular news on a certain topic is. Final project in Yandex.Practicum
 
-Сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определённую тему.
+[Live Demo](https://ninanazarova.github.io/news-analyzer/)
 
-## **_Стек технологий_**
-
+### Tech Stack
 - JavaScript(ES6+)
 - HTML5
 - CSS3
 - Webpack
 
-## **_Как запустить проект_**
+### Installation
+```bash
+# install dependencies
+$ npm install
 
-- Скачайте или склонируйте репозиторий
-- Соберите проект следующими командами:
+# build for production
+$ npm run build
 
-  В develop сборке
-
-  ```
-  npm i
-
-  npm run dev
-  ```
-
-  В production сборке
-
-  ```
-  npm run build
-  ```
-
-## **_Посмотреть сайт_**
-
-https://ninanazarova.github.io/news-analyzer/
+```
